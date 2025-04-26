@@ -7,7 +7,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { NextFunction, Request, Response } from 'express';
 import * as mongoSanitize from 'express-mongo-sanitize';
-import { ApiModule } from './app.module';
+import { ApiModule } from './api.module';
 import { API_APP_PREFIX_V1 } from './modules/core/constants';
 
 async function bootstrap() {
