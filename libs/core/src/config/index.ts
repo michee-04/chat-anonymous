@@ -289,29 +289,29 @@ export class AppConfig {
   @Transform(({ value }) => value === 'true')
   LIB_NOTIFICATION_MAILER_GMAIL_ENABLE_TLS: boolean = false;
 
-  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_SENDGRID_ENABLED === true)
+  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_GMAIL_ENABLED === true)
   @IsString()
   @IsNotEmpty()
   LIB_NOTIFICATION_MAILER_GMAIL_HOST: string;
 
-  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_SENDGRID_ENABLED === true)
+  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_GMAIL_ENABLED === true)
   @IsInt()
   @Min(0)
   @Max(65_535)
   @Transform(({ value }) => parseInt(value, 10))
   LIB_NOTIFICATION_MAILER_GMAIL_PORT: number = 25;
 
-  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_SENDGRID_ENABLED === true)
+  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_GMAIL_ENABLED === true)
   @IsString()
   @IsOptional()
   LIB_NOTIFICATION_MAILER_GMAIL_USERNAME: string;
 
-  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_SENDGRID_ENABLED === true)
+  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_GMAIL_ENABLED === true)
   @IsString()
   @IsOptional()
   LIB_NOTIFICATION_MAILER_GMAIL_PASSWORD: string;
 
-  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_SENDGRID_ENABLED === true)
+  @ValidateIf((o) => o.LIB_NOTIFICATION_MAILER_GMAIL_ENABLED === true)
   @IsEmail()
   LIB_NOTIFICATION_MAILER_GMAIL_DEFAULT_MAIL_FROM: string;
 }

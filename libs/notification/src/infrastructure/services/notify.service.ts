@@ -43,6 +43,7 @@ export class NotifyService {
     if (!this.isEmailEnabled) return null;
 
     const template = await this.emailTemplateRepository.getActiveBySlug(slug);
+
     if (!template) {
       this.log('error', `EMAIL template not found with slug: ${slug}`);
       return null;

@@ -3,7 +3,7 @@ import { LibUserAccessControlDomainModule } from './domain/domain.module';
 import { LibUserAccessControlInfrastructureModule } from './infrastructure/infrastructure.module';
 
 @Module({
-  providers: [
+  imports: [
     LibUserAccessControlDomainModule,
     LibUserAccessControlInfrastructureModule,
   ],

@@ -143,6 +143,7 @@ export class AuthService {
     const user = await this.handleLogin(creds, isAdmin);
 
     const old = await this.loginOtpRepository.getLastOneByEmail(user.email);
+
     if (old && !DateUtils.isAfter(new Date(), old.exp) && !old.checked) {
       return old;
     }
@@ -494,6 +495,7 @@ export class AuthService {
         message: `Le compte [${identifier}] est introuvable`,
       });
     }
+    console.log('❄️❄️❄️❄️ : ', identifier);
 
     if (!user.verified) {
       this.log('info', `Le compte utilisateur ${identifier} n'est pas vérifié`);

@@ -1,5 +1,5 @@
-import { LibJournalDomainModule } from '@app/journal/domain/domain.module';
-import { LibUserAccessControlDomainModule } from '@app/user-access-control/domain/domain.module';
+import { LibJournalModule } from '@app/journal';
+import { LibUserAccessControlModule } from '@app/user-access-control';
 import { Module } from '@nestjs/common';
 import {
   AdminController,
@@ -10,7 +10,7 @@ import {
 } from './controllers';
 
 @Module({
-  imports: [LibUserAccessControlDomainModule, LibJournalDomainModule],
+  imports: [LibUserAccessControlModule, LibJournalModule],
   controllers: [
     AdminController,
     RoleController,
