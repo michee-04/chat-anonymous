@@ -20,8 +20,8 @@ async function bootstrap() {
 
   const baseUrl = config.get('API_APP_BASE_URL', { infer: true });
   const swaggerConfig = new DocumentBuilder()
-    .setTitle('Backend - Togo Voyage')
-    .setDescription('Backend de la plateforme Togo Voyage.')
+    .setTitle('Backend - Chat')
+    .setDescription('Backend de la plateforme Chat.')
     .setVersion('1.0')
     .addServer(`${baseUrl}/${API_APP_PREFIX_V1}`)
     .addBearerAuth()
