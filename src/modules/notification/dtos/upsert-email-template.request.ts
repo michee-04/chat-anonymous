@@ -19,14 +19,15 @@ export class UpsertEmailTemplateDto {
   @ApiProperty({
     type: String,
     description: "L'objet de la notificaton mail",
-    example: 'Code de vérification pour accéder à Togo Voyage',
+    example: 'Code de vérification pour accéder à CHAT ANONYMOUS',
   })
   subject: string;
 
   @ApiProperty({
     type: String,
     description: 'Le message texte de la notificaton mail',
-    example: 'Votre code de vérification pour accéder à Togo Voyage est : 000.',
+    example:
+      'Votre code de vérification pour accéder à CHAT ANONYMOUS est : 000.',
   })
   message: string;
 
@@ -34,7 +35,7 @@ export class UpsertEmailTemplateDto {
     type: String,
     description: 'Le modèle (HTML) de la notification mail',
     example:
-      '<p>Votre code de vérification pour accéder à Togo Voyage est : 000.</p>',
+      '<p>Votre code de vérification pour accéder à CHAT ANONYMOUS est : 000.</p>',
   })
   template: string;
 

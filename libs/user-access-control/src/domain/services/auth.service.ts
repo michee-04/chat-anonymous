@@ -495,7 +495,6 @@ export class AuthService {
         message: `Le compte [${identifier}] est introuvable`,
       });
     }
-    console.log('❄️❄️❄️❄️ : ', identifier);
 
     if (!user.verified) {
       this.log('info', `Le compte utilisateur ${identifier} n'est pas vérifié`);

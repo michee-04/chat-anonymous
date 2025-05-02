@@ -168,10 +168,9 @@ export class AuthController {
       const { email } = new ResendVerificationEmailDto(body);
 
       const user = await this.userService.getByPath('email', email);
-      // TODO: corriger pour l'envoie des mails
       await this.authService.sendVerificationEmail(
         user,
-        `/${API_APP_PREFIX_V1}/auth/verify-email`,
+        `/${API_APP_PREFIX_V1}/user/auth/verify-email`,
         lang,
       );
 

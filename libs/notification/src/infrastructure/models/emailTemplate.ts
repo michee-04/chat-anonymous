@@ -16,7 +16,7 @@ export class EmailTemplate extends Document {
 
   @ApiProperty({
     type: String,
-    example: 'Code de vérification pour accéder à Togo Voyage',
+    example: 'Code de vérification pour accéder à CHAT ANONYMOUS',
   })
   @Prop({ type: String, required: true })
   subject: string;
@@ -32,14 +32,15 @@ export class EmailTemplate extends Document {
   @ApiProperty({
     type: String,
     example:
-      '<p>Votre code de vérification pour accéder à Togo Voyage est : 000.</p>',
+      '<p>Votre code de vérification pour accéder à CHAT ANONYMOUS est : 000.</p>',
   })
   @Prop({ type: String, required: true })
   template: string;
 
   @ApiProperty({
     type: String,
-    example: 'Votre code de vérification pour accéder à Togo Voyage est : 000.',
+    example:
+      'Votre code de vérification pour accéder à CHAT ANONYMOUS est : 000.',
   })
   @Prop({ type: String, required: true })
   message: string;

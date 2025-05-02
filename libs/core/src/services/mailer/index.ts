@@ -52,10 +52,10 @@ export class MailService {
       port: this.config.get(`LIB_NOTIFICATION_MAILER_${clientName}_PORT`, {
         infer: true,
       }),
-      secure: this.config.get(
-        `LIB_NOTIFICATION_MAILER_${clientName}_ENABLE_TLS`,
-        { infer: true },
-      ),
+      secure:
+        this.config.get(`LIB_NOTIFICATION_MAILER_${clientName}_ENABLE_TLS`, {
+          infer: true,
+        }) === ('true' as any),
       auth: {
         user: this.config.get(
           `LIB_NOTIFICATION_MAILER_${clientName}_USERNAME`,
@@ -73,6 +73,26 @@ export class MailService {
   async send(mailOptions: Omit<SendMailOptions, 'from'>) {
     await this.sendWithClient(this.activeClient, mailOptions);
   }
+
+  // async send(mailOptions: Omit<SendMailOptions, 'from'>) {
+  //   console.log('🟢 Active Client Config:', {
+  //     from: this.activeClient.from,
+  //     transport: this.activeClient.transport,
+  //   });
+
+  //   try {
+  //     const result = await this.sendWithClient(this.activeClient, mailOptions);
+  //     console.log('🟢 Email sent successfully to:', mailOptions.to);
+  //     return result;
+  //   } catch (error) {
+  //     console.error('🔴 Email send error:', {
+  //       error: error.message,
+  //       stack: error.stack,
+  //       response: error.response,
+  //     });
+  //     throw error;
+  //   }
+  // }
 
   async sendWithClient(
     client: MailClient,
